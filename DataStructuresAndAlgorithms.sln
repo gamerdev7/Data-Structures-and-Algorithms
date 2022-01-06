@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack using Array", "Stack 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue using Stack", "Queue using Stack\Queue using Stack.csproj", "{B3A0CD2E-7F70-4B81-86CB-69DF6E490F82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binary Search Trees", "Binary Search Tree\Binary Search Trees.csproj", "{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +104,18 @@ Global
 		{B3A0CD2E-7F70-4B81-86CB-69DF6E490F82}.Release|x64.Build.0 = Release|Any CPU
 		{B3A0CD2E-7F70-4B81-86CB-69DF6E490F82}.Release|x86.ActiveCfg = Release|Any CPU
 		{B3A0CD2E-7F70-4B81-86CB-69DF6E490F82}.Release|x86.Build.0 = Release|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Debug|x64.Build.0 = Debug|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Debug|x86.Build.0 = Debug|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Release|x64.ActiveCfg = Release|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Release|x64.Build.0 = Release|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Release|x86.ActiveCfg = Release|Any CPU
+		{1CF51D8C-D92F-4A94-B5FC-FEDC9978A99D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B1A8C481-96BC-432A-9C8F-88821FF77A8B} = {BBF994D0-6ED8-11EC-923D-D54EE154DA96}
