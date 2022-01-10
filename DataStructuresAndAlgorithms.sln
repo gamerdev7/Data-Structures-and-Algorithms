@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphs", "Graphs\Graphs.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binary Heap", "Binary Heap\Binary Heap.csproj", "{5A45E6E9-EB78-4C2D-A897-7FA0139DB94B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueue", "PriorityQueue\PriorityQueue.csproj", "{F6065EB1-14A0-4E17-B3A1-A18A60C80429}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -144,6 +146,18 @@ Global
 		{5A45E6E9-EB78-4C2D-A897-7FA0139DB94B}.Release|x64.Build.0 = Release|Any CPU
 		{5A45E6E9-EB78-4C2D-A897-7FA0139DB94B}.Release|x86.ActiveCfg = Release|Any CPU
 		{5A45E6E9-EB78-4C2D-A897-7FA0139DB94B}.Release|x86.Build.0 = Release|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Debug|x64.Build.0 = Debug|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Debug|x86.Build.0 = Debug|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Release|x64.ActiveCfg = Release|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Release|x64.Build.0 = Release|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Release|x86.ActiveCfg = Release|Any CPU
+		{F6065EB1-14A0-4E17-B3A1-A18A60C80429}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B1A8C481-96BC-432A-9C8F-88821FF77A8B} = {BBF994D0-6ED8-11EC-923D-D54EE154DA96}
