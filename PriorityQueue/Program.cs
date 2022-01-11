@@ -22,14 +22,26 @@ namespace Priority_Queue
             this.Comparer = comparer;
         }
 
-        public PriorityQueue(IEnumerable<(TElement, TPriority)> items)
+        public PriorityQueue(IEnumerable<(TElement Element, TPriority Priority)> items)
         {
             BuildHeap(items);
         }
 
-        public PriorityQueue(IEnumerable<(TElement, TPriority)> items, IComparer<TPriority> comparer) : this(comparer)
+        public PriorityQueue(int initialCapacity)
         {
+            heap = new List<(TElement Element, TPriority Priority)>(initialCapacity);
+        }
+
+        public PriorityQueue(IEnumerable<(TElement Element, TPriority Priority)> items, IComparer<TPriority> comparer)
+        {
+            this.Comparer = comparer;
             BuildHeap(items);
+        }
+
+        public PriorityQueue(int initialCapacity, IComparer<TPriority> comparer)
+        {
+            heap = new List<(TElement Element, TPriority Priority)>(initialCapacity);
+            this.Comparer = comparer;
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -48,7 +60,7 @@ namespace Priority_Queue
 
             for (int i = heap.Count / 2 - 1; i >= 0; i--)
             {
-                Heapify(i);
+                HeapifyDown(i);
             }
         }
 
@@ -63,18 +75,7 @@ namespace Priority_Queue
 
             var index = heap.Count - 1;
 
-            while (index > 0)
-            {
-                int parentIndex = Parent(index);
-
-                if (Compare(heap[index].Priority, heap[parentIndex].Priority) > 0)
-                {
-                    (heap[index], heap[parentIndex]) = (heap[parentIndex], heap[index]);
-                    index = parentIndex;
-                }
-                else
-                    return;
-            }
+            HeapifyUp(index);
         }
 
         public TElement Dequeue()
@@ -85,15 +86,21 @@ namespace Priority_Queue
             var max = heap[0].Element;
             heap[0] = heap[heap.Count - 1];
             heap.RemoveAt(heap.Count - 1);
-            Heapify(0);
+            HeapifyDown(0);
 
             return max;
         }
 
         public TElement EnqueueDequeue(TElement element, TPriority priority)
         {
-            Enqueue(element, priority);
-            return Dequeue();
+            if (heap.Count == 0 || Compare(priority, heap[0].Priority) < 0)
+                return element;
+
+            var max = heap[0].Element;
+            heap[0] = (element, priority);
+            HeapifyDown(0);
+
+            return max;
         }
 
         public TElement Peek()
@@ -104,26 +111,42 @@ namespace Priority_Queue
             return heap[0].Element;
         }
 
-        private void Heapify(int index)
+        private void HeapifyDown(int index)
         {
             var left = LeftChild(index);
             var right = RightChild(index);
-            var largest = index;
+            var smallest = index;
 
-            if (left < heap.Count && Compare(heap[largest].Priority, heap[left].Priority) < 0)
+            if (left < heap.Count && Compare(heap[smallest].Priority, heap[left].Priority) > 0)
             {
-                largest = left;
+                smallest = left;
             }
 
-            if (right < heap.Count && Compare(heap[largest].Priority, heap[right].Priority) < 0)
+            if (right < heap.Count && Compare(heap[smallest].Priority, heap[right].Priority) > 0)
             {
-                largest = right;
+                smallest = right;
             }
 
-            if (largest != index)
+            if (smallest != index)
             {
-                (heap[index], heap[largest]) = (heap[largest], heap[index]);
-                Heapify(largest);
+                (heap[index], heap[smallest]) = (heap[smallest], heap[index]);
+                HeapifyDown(smallest);
+            }
+        }
+
+        private void HeapifyUp(int index)
+        {
+            while (index > 0)
+            {
+                int parentIndex = Parent(index);
+
+                if (Compare(heap[index].Priority, heap[parentIndex].Priority) < 0)
+                {
+                    (heap[index], heap[parentIndex]) = (heap[parentIndex], heap[index]);
+                    index = parentIndex;
+                }
+                else
+                    return;
             }
         }
 
@@ -166,7 +189,7 @@ namespace Priority_Queue
                 newA[i] = (a[i], a[i]);
             }
 
-            PriorityQueue<int, int> pq = new PriorityQueue<int, int>(newA, Comparer<int>.Create((a, b) => b - a));
+            PriorityQueue<int, int> pq = new PriorityQueue<int, int>(newA);
 
             pq.Print();
             pq.Dequeue();
@@ -184,5 +207,4 @@ namespace Priority_Queue
             pq.Print();
         }
     }
-
 }
