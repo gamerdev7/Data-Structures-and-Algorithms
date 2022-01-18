@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace MergeSort_Sort
+namespace Merge_Sort
 {
     class Program
     {
         static void Main(string[] args)
         {
             int[] a = new[] { 2, 4, 5, 1, 3 };
-            MergeSortSort(a, 0, a.Length - 1);
+            MergeSort(a, 0, a.Length - 1);
 
             foreach (var item in a)
             {
@@ -15,7 +15,7 @@ namespace MergeSort_Sort
             }
         }
 
-        public static void MergeSortSort(int[] array, int start, int end)
+        public static void MergeSort(int[] array, int start, int end)
         {
             if (start == end)
             {
@@ -24,8 +24,8 @@ namespace MergeSort_Sort
 
             int mid = (start + end) / 2;
 
-            MergeSortSort(array, start, mid);
-            MergeSortSort(array, mid + 1, end);
+            MergeSort(array, start, mid);
+            MergeSort(array, mid + 1, end);
 
             Merge(array, new int[array.Length], start, end);
         }
